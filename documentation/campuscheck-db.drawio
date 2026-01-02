@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="CampusCheck DB Design" id="0">
+    <mxGraphModel dx="1095" dy="1070" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="users&#xa;&#xa;_id : ObjectId&#xa;name : string&#xa;email : string (unique)&#xa;passwordHash : string&#xa;role : ADMIN | STUDENT&#xa;createdAt&#xa;updatedAt" vertex="1">
+          <mxGeometry height="200" width="260" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="events" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="events&#xa;&#xa;_id : ObjectId&#xa;title&#xa;description&#xa;academicYear&#xa;startTime&#xa;endTime&#xa;location {lat,lng}&#xa;radiusMeters&#xa;ipWhitelist[]&#xa;minAttendance&#xa;maxAttendance&#xa;createdBy (adminId)&#xa;createdAt&#xa;updatedAt" vertex="1">
+          <mxGeometry height="260" width="320" x="380" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="attendances" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="attendances&lt;br&gt;&lt;br&gt;_id : ObjectId&lt;br&gt;eventId&lt;br&gt;studentId&lt;br&gt;&lt;br&gt;checkIn {time, ip, location, selfieUrl}&lt;br&gt;checkOut {time, ip, location}&lt;br&gt;&lt;br&gt;assessmentText&lt;br&gt;score (0–10)&lt;div&gt;comment&lt;br&gt;createdAt&lt;br&gt;updatedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="360" x="380" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="credits" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="credits&#xa;&#xa;_id : ObjectId&#xa;studentId&#xa;academicYear&#xa;totalEvents&#xa;totalScore&#xa;creditValue (1.25–2.0)&#xa;eligible : boolean&#xa;calculatedAt" vertex="1">
+          <mxGeometry height="200" width="300" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="users" style="endArrow=block;html=1;" target="events">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="users" style="endArrow=block;html=1;" target="attendances">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="events" style="endArrow=block;html=1;" target="attendances">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="users" style="endArrow=block;html=1;" target="credits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
