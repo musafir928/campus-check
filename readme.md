@@ -25,16 +25,6 @@ student: npm run student -> localhost:3001
 server: npm run server -> localhost:3000
 ```
 
-for local api testing and debugging you might need to generate role based token:
-change the `role` field accordingly
-
-```
-generate admin keys: npm run generate:keys
-generate token: 
-- cd scripts
-- node token.js
-```
-
 ## Credit Rules
 - ≥ 10 events
 - Total score > 60
