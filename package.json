@@ -1,0 +1,33 @@
+{
+  "name": "campus-check",
+  "version": "1.0.0",
+  "description": "CampusCheck is a secure student event attendance system built with NestJS, React, and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm run i:server && npm run i:student && npm run i:admin",
+    "i:server": "npm i --prefix server",
+    "i:student": "npm i --prefix student",
+    "i:admin": "npm i --prefix admin",
+    "start:dev": "npm run --prefix server start:dev",
+    "start:prod": "npm run --prefix server start:prod",
+    "start:student": "npm run --prefix student start",
+    "build:student": "npm run --prefix student build",
+    "start:admin": "npm run --prefix admin start",
+    "build:admin": "npm run --prefix admin build",
+    "build:server": "npm run --prefix server build --prod",
+    "build": "npm run build:server && npm run build:student && npm run build:admin",
+    "start": "npm run --prefix server start:prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musafir928/campus-check.git"
+  },
+  "keywords": ["Student", "Event"],
+  "author": "Adil Ablimit",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/musafir928/campus-check/issues"
+  },
+  "homepage": "https://github.com/musafir928/campus-check#readme"
+}
